@@ -1,0 +1,11 @@
+lot_id,process_id,pct_supercoiled,concentration_mg_ml,residual_gdna_pct,residual_rna_pct,residual_protein_ug_mg,endotoxin_eu_per_mg,bioburden_cfu_per_10ml,identity_restriction_digest,harvest_od600,duration_hr
+VAX03-DEV-001,VAX-03,88.89,2.04,0.346,0.388,1.054,7.1,0,conforms,86.7,16.6
+VAX03-DEV-002,VAX-03,89.02,1.95,0.503,0.409,1.207,2.4,0,conforms,91.0,16.9
+VAX03-DEV-003,VAX-03,90.36,1.94,0.426,0.464,1.158,5.27,0,conforms,90.2,17.3
+VAX03-DEV-004,VAX-03,91.12,2.03,0.251,0.461,1.076,2.69,0,conforms,87.1,17.4
+VAX03-DEV-005,VAX-03,91.0,1.99,0.421,0.205,0.815,3.97,0,conforms,99.6,16.4
+VAX03-DEV-006,VAX-03,92.0,2.04,0.446,0.252,1.105,5.73,0,conforms,92.9,16.8
+VAX03-DEV-007,VAX-03,90.52,2.03,0.294,0.404,0.691,4.57,0,conforms,80.9,16.8
+VAX03-DEV-008,VAX-03,93.13,2.0,0.418,0.404,0.836,3.29,0,conforms,90.8,16.7
+VAX03-DEV-009,VAX-03,90.02,1.95,0.407,0.404,0.769,3.7,0,conforms,87.0,17.9
+VAX03-DEV-010,VAX-03,95.42,1.91,0.263,0.755,0.922,5.26,0,conforms,93.8,17.2

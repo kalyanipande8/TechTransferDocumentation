@@ -1,0 +1,147 @@
+{
+  "process_id": "mAb-01",
+  "process_name": "Anti-TNF IgG1 Monoclonal Antibody - CHO Fed-Batch Process",
+  "modality": "Monoclonal antibody (IgG1)",
+  "development_scale": "5 L (seed) / 200 L (production bioreactor)",
+  "target_commercial_scale": "2000 L production bioreactor",
+  "unit_operations": [
+    {
+      "step": 1,
+      "name": "Cell Thaw & Seed Train Expansion",
+      "description": "Thaw WCB vial, expand through shake flasks and seed bioreactors (N-2, N-1) over 10-12 days to reach inoculation density.",
+      "equipment": "Shake flasks, 5 L single-use bioreactor",
+      "cpps": {
+        "culture_duration_days": "10-12",
+        "seed_viability_pct": ">=95",
+        "inoculation_vcd_e6_per_ml": "0.3-0.5"
+      }
+    },
+    {
+      "step": 2,
+      "name": "Production Bioreactor (Fed-Batch)",
+      "description": "200 L fed-batch culture with daily glucose-controlled feed, 14-day run, temperature shift on day 7 to extend productivity.",
+      "equipment": "200 L stainless steel bioreactor",
+      "cpps": {
+        "temperature_c_phase1": "37.0 +/- 0.5",
+        "temperature_c_phase2": "33.0 +/- 0.5",
+        "ph_setpoint": "7.00 +/- 0.10",
+        "do_pct": "40 +/- 10",
+        "culture_duration_days": 14
+      }
+    },
+    {
+      "step": 3,
+      "name": "Harvest Clarification",
+      "description": "Depth filtration followed by 0.2 um sterile filtration to remove cells and debris.",
+      "equipment": "Depth filter train + 0.2 um PES filter",
+      "cpps": {
+        "flux_lmh": "50-150",
+        "max_turbidity_ntu_post": "<=20"
+      }
+    },
+    {
+      "step": 4,
+      "name": "Protein A Capture Chromatography",
+      "description": "MabSelect SuRe resin, bind-elute mode, low pH elution.",
+      "equipment": "Protein A column, 20 cm bed height",
+      "cpps": {
+        "load_g_per_l_resin": "<=35",
+        "elution_ph": "3.5 +/- 0.2",
+        "residence_time_min": "4-6"
+      }
+    },
+    {
+      "step": 5,
+      "name": "Low pH Viral Inactivation",
+      "description": "Hold Protein A eluate at low pH for 60 min to inactivate enveloped viruses, then neutralize.",
+      "cpps": {
+        "hold_ph": "3.6 +/- 0.1",
+        "hold_time_min": ">=60",
+        "hold_temperature_c": "18-25"
+      }
+    },
+    {
+      "step": 6,
+      "name": "Anion Exchange Polish (Flow-Through)",
+      "description": "AEX membrane/resin flow-through mode to remove HCP, DNA, and aggregates.",
+      "equipment": "Q membrane adsorber",
+      "cpps": {
+        "load_g_per_l_resin": "<=100",
+        "conductivity_ms_cm": "<=8"
+      }
+    },
+    {
+      "step": 7,
+      "name": "Cation Exchange Polish (Bind-Elute)",
+      "description": "CEX bind-elute step to further remove HCP, leached Protein A, and charge variants.",
+      "equipment": "CEX resin column",
+      "cpps": {
+        "load_g_per_l_resin": "<=40",
+        "gradient_nacl_mm": "0-300"
+      }
+    },
+    {
+      "step": 8,
+      "name": "Viral Filtration",
+      "description": "Nanofiltration (20 nm pore) for robust parvovirus clearance.",
+      "equipment": "Virosart / Planova-type filter",
+      "cpps": {
+        "max_flux_lmh": "<=10",
+        "max_pressure_bar": "<=2.8"
+      }
+    },
+    {
+      "step": 9,
+      "name": "UF/DF Formulation",
+      "description": "Ultrafiltration/diafiltration to target concentration and final formulation buffer.",
+      "equipment": "Tangential flow filtration, 30 kDa MWCO",
+      "cpps": {
+        "target_concentration_mg_ml": "50 +/- 5",
+        "diavolumes": ">=8"
+      }
+    },
+    {
+      "step": 10,
+      "name": "Sterile Filtration & Fill",
+      "description": "0.2 um sterile filtration into final bulk containers.",
+      "equipment": "0.2 um PVDF sterile filter",
+      "cpps": {
+        "bioburden_cfu_per_100ml": "<=1"
+      }
+    }
+  ],
+  "release_specifications": {
+    "titer_g_per_l": {
+      "spec": ">=3.0",
+      "unit": "g/L"
+    },
+    "purity_sec_pct_monomer": {
+      "spec": ">=98.0",
+      "unit": "%"
+    },
+    "hcp_ppm": {
+      "spec": "<=50",
+      "unit": "ppm"
+    },
+    "protein_a_ppm": {
+      "spec": "<=5",
+      "unit": "ppm"
+    },
+    "endotoxin_eu_per_mg": {
+      "spec": "<=0.5",
+      "unit": "EU/mg"
+    },
+    "bioburden_cfu_per_10ml": {
+      "spec": "<=1",
+      "unit": "CFU/10mL"
+    },
+    "ph_final": {
+      "spec": "6.0-6.4",
+      "unit": "pH"
+    },
+    "osmolality_mosm_kg": {
+      "spec": "270-330",
+      "unit": "mOsm/kg"
+    }
+  }
+}

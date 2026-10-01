@@ -1,0 +1,60 @@
+{
+  "overall": {
+    "checks_run": 490,
+    "checks_passed": 487,
+    "checks_failed": 3,
+    "integrity_pct": 99.388
+  },
+  "by_process": {
+    "mAb-01": {
+      "process_name": "Anti-TNF IgG1 Monoclonal Antibody - CHO Fed-Batch Process",
+      "n_batches": 10,
+      "n_unit_operations": 10,
+      "n_release_specs": 8,
+      "checks_run": 164,
+      "checks_passed": 163,
+      "integrity_pct": 99.39
+    },
+    "ENZ-02": {
+      "process_name": "Recombinant Industrial Lipase - E. coli Fermentation Process",
+      "n_batches": 10,
+      "n_unit_operations": 9,
+      "n_release_specs": 8,
+      "checks_run": 159,
+      "checks_passed": 158,
+      "integrity_pct": 99.371
+    },
+    "VAX-03": {
+      "process_name": "Plasmid DNA Drug Substance - E. coli Fermentation & AEX Downstream Process",
+      "n_batches": 10,
+      "n_unit_operations": 10,
+      "n_release_specs": 9,
+      "checks_run": 167,
+      "checks_passed": 166,
+      "integrity_pct": 99.401
+    }
+  },
+  "failing_checks": [
+    {
+      "process_id": "mAb-01",
+      "category": "completeness",
+      "item": "unit_op_step_5.equipment",
+      "detail": "Unit operation 'Low pH Viral Inactivation' has required field 'equipment'",
+      "passed": false
+    },
+    {
+      "process_id": "ENZ-02",
+      "category": "consistency",
+      "item": "ENZ02-DEV-007.hcp_ppm",
+      "detail": "Lot ENZ02-DEV-007 value for 'hcp_ppm' meets spec '<=100'",
+      "passed": false
+    },
+    {
+      "process_id": "VAX-03",
+      "category": "cross_reference",
+      "item": "spec_to_batch_column.residual_antibiotic_ppm",
+      "detail": "Release spec 'residual_antibiotic_ppm' has a corresponding batch record column",
+      "passed": false
+    }
+  ]
+}

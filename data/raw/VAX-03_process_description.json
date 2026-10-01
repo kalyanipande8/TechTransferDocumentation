@@ -1,0 +1,149 @@
+{
+  "process_id": "VAX-03",
+  "process_name": "Plasmid DNA Drug Substance - E. coli Fermentation & AEX Downstream Process",
+  "modality": "Plasmid DNA (pDNA) for gene therapy / vaccine applications",
+  "development_scale": "5 L seed / 100 L production fermenter",
+  "target_commercial_scale": "1500 L production fermenter",
+  "unit_operations": [
+    {
+      "step": 1,
+      "name": "Seed Train Expansion",
+      "description": "Glycerol stock to shake flask to 5 L seed fermenter, antibiotic-free selective medium.",
+      "equipment": "Shake flasks, 5 L stirred-tank fermenter",
+      "cpps": {
+        "duration_hr": "12-14",
+        "od600_target": "4-6",
+        "temperature_c": "37.0 +/- 0.5"
+      }
+    },
+    {
+      "step": 2,
+      "name": "Production Fermentation (Fed-Batch)",
+      "description": "100 L fed-batch fermentation to high cell density, non-antibiotic plasmid maintenance system.",
+      "equipment": "100 L stainless steel fermenter",
+      "cpps": {
+        "harvest_od600": "80-100",
+        "duration_hr": "16-18",
+        "temperature_c": "37.0 +/- 0.5",
+        "ph_setpoint": "7.00 +/- 0.10",
+        "do_pct": "30 +/- 10"
+      }
+    },
+    {
+      "step": 3,
+      "name": "Cell Harvest (Centrifugation)",
+      "description": "Continuous centrifugation to pellet cells for alkaline lysis.",
+      "equipment": "Disc-stack centrifuge",
+      "cpps": {
+        "bowl_speed_rpm": "8000-10000"
+      }
+    },
+    {
+      "step": 4,
+      "name": "Alkaline Lysis & Neutralization",
+      "description": "NaOH/SDS lysis followed by potassium acetate neutralization to precipitate genomic DNA and protein.",
+      "equipment": "In-line static mixer, hold tanks",
+      "cpps": {
+        "lysis_time_min": "5 +/- 1",
+        "neutralization_hold_time_min": "15-20",
+        "lysate_temperature_c": "15-20"
+      }
+    },
+    {
+      "step": 5,
+      "name": "Clarification (Depth Filtration)",
+      "description": "Depth filtration to remove precipitated gDNA/protein/cell debris flocs.",
+      "equipment": "Depth filter train",
+      "cpps": {
+        "flux_lmh": "30-80",
+        "max_turbidity_ntu_post": "<=10"
+      }
+    },
+    {
+      "step": 6,
+      "name": "Endotoxin/RNA Reduction (Selective Precipitation)",
+      "description": "Calcium chloride precipitation step to reduce residual RNA and endotoxin ahead of chromatography.",
+      "equipment": "Agitated precipitation vessel",
+      "cpps": {
+        "cacl2_concentration_m": "0.3-0.5",
+        "hold_time_min": "30-60"
+      }
+    },
+    {
+      "step": 7,
+      "name": "Anion Exchange Capture Chromatography",
+      "description": "AEX bind-elute step, resolving supercoiled plasmid from open-circular/linear isoforms and RNA.",
+      "equipment": "Q resin column",
+      "cpps": {
+        "load_mg_per_ml_resin": "<=5",
+        "gradient_nacl_m": "0.8-1.2"
+      }
+    },
+    {
+      "step": 8,
+      "name": "Size-Exclusion / Hydrophobic Polish",
+      "description": "Polish step to further enrich supercoiled topology and remove residual HCP/endotoxin.",
+      "equipment": "SEC or HIC column",
+      "cpps": {
+        "load_mg_per_ml_resin": "<=3"
+      }
+    },
+    {
+      "step": 9,
+      "name": "Tangential Flow Filtration (Concentration/Diafiltration)",
+      "description": "TFF to concentrate and exchange into final formulation buffer (TE or saline).",
+      "equipment": "Tangential flow filtration, 100-300 kDa MWCO",
+      "cpps": {
+        "target_concentration_mg_ml": "2.0 +/- 0.2",
+        "diavolumes": ">=10"
+      }
+    },
+    {
+      "step": 10,
+      "name": "Sterile Filtration & Fill",
+      "description": "0.2 um sterile filtration into final bulk containers.",
+      "equipment": "0.2 um PES sterile filter",
+      "cpps": {
+        "bioburden_cfu_per_100ml": "<=1"
+      }
+    }
+  ],
+  "release_specifications": {
+    "pct_supercoiled": {
+      "spec": ">=85.0",
+      "unit": "%"
+    },
+    "concentration_mg_ml": {
+      "spec": "1.8-2.2",
+      "unit": "mg/mL"
+    },
+    "residual_gdna_pct": {
+      "spec": "<=1.0",
+      "unit": "%"
+    },
+    "residual_rna_pct": {
+      "spec": "<=1.0",
+      "unit": "%"
+    },
+    "residual_protein_ug_mg": {
+      "spec": "<=2.0",
+      "unit": "ug/mg"
+    },
+    "endotoxin_eu_per_mg": {
+      "spec": "<=10.0",
+      "unit": "EU/mg"
+    },
+    "bioburden_cfu_per_10ml": {
+      "spec": "<=1",
+      "unit": "CFU/10mL"
+    },
+    "identity_restriction_digest": {
+      "spec": "conforms",
+      "unit": "pass/fail"
+    },
+    "residual_antibiotic_ppm": {
+      "spec": "<=0.1",
+      "unit": "ppm"
+    }
+  }
+}
